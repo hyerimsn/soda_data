@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피노키오 [발언 검색기]</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="title">
+            <img src="{% static 'image/KakaoTalk_20201227_193622996.jpg' %}">
+        </div>
+        <div class="content">
+            <div class="search">
+                <form action="" method="get">
+                    <input class="bar" type="text" name="d" placeholder="발언 날짜 (ex. 20200101)" value="{{ d }}"><br>
+                    <input class="bar" type="text" name="n" placeholder="발언자명" value="{{ n }}"><br>
+                    <input class="bar" type="text" name="q" placeholder="검색어를 입력해 주세요" value="{{ q }}"><br>
+                    <input class="btn" type="submit" value="검색">
+                </form>
+            </div>
+            {% if q %}
+            <div class="result">
+                <div class="result_log">
+                    <b><h3 style="font-weight: 900;">관련 회의록</h3></b>
+                    {% if logs %}
+                        <table style="text-align: center;">
+                            <tr style="height: 35px; background-color: #ccc;">
+                                <th style="width: 40%;">날짜</th>
+                                <th style="width: 30%;">발언자</th>
+                                <th style="width: 65%;">내용</th>
+                            </tr>
+                            {% for log in logs %}
+                            <tr>
+                                <td>{{log.date}}</td>
+                                <td>{{log.person}}</td>
+                                <td class="ment"><a href="{% url 'detail' log.id %}">{{log.ment}}</a></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        
+                    {% else %}
+                        <h3>관련 회의록이 없어요</h3>
+                    {% endif %}
+                </div>
+                <div class="result_news">
+                    <b><h3 style="font-weight: 900;">관련 기사</h3></b>
+                    {% if news %}
+                    <div class="result_news_inner">
+                        {% for new in news %}
+                            <div class="anews">
+                                <B>{{new.media}}</B>
+                                {{new.date}}
+                                <a href="{{new.link}}">
+                                    {{new.title}}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>       
+                    {% else %}
+                    <h3>관련 기사가 없어요</h3>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

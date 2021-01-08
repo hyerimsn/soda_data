@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2F528F;
+    height: 100%;
+}
+
+
+.wrapper {
+    width: 80vw;
+    display: block;
+    position: relative;
+    margin: 3em auto;
+    padding: 3em;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+
+
+h3 {
+    font-family: 'NanumSquare', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+.search {
+    text-align: center;
+}
+
+.bar {
+    font-family: 'NanumSquare', sans-serif;
+    width: 30vw;
+    height: 30px;
+    border: solid #000000 2px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.btn {
+    font-family: 'NanumSquare', sans-serif;
+    height: 44px;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 20px;
+    width: 120px;
+    background-color:  #0c1036;
+    border: solid  #0c1036 2px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e0bf03;
+    border: solid  #e0bf03 2px;
+    color: #0c1036 ;
+}
+
+.result {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.result_log {
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.result_log_inner {
+    overflow-y: auto;
+}
+
+.result_news {
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.result_news_inner {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.alog {
+    position: relative;
+    height: 20px;
+    width: 90%;
+    border-bottom: #000000 solid 1px;
+    padding: 10px;
+}
+
+.anews {
+    position: relative;
+    height: 20px;
+    max-width: 90%;
+    border-bottom: #000000 solid 1px;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 130px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}

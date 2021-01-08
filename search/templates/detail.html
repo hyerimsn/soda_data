@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피노키오 [발언 검색기]</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <a href="{% url 'detail' log_before.id %}">
+            <div class="who">
+                {{log_before.person}} {{log_before.status}}
+            </div>
+            <div class="date">
+                {{log_before.date}}
+            </div>
+            <div class="ment">
+                {{log_before.ment}}
+            </div>
+        </a>
+    </div>
+    <div class="wrapper">
+        <div class="who">
+            {{log_one.person}} {{log_one.status}}
+        </div>
+        <div class="date">
+            {{log_one.date}}
+        </div>
+        <div class="ment">
+            {{log_one.ment}}
+        </div>
+    
+    </div>
+    <div class="wrapper">
+        <a href="{% url 'detail' log_after.id %}">
+
+        <div class="who">
+            {{log_after.person}} {{log_after.status}}
+        </div>
+        <div class="date">
+            {{log_after.date}}
+        </div>
+        <div class="ment">
+            {{log_after.ment}}
+        </div>
+        </a>
+    </div>
+        <div class="btn">
+            <a class="btn_a" href="{% url 'realhome' %}">메인으로</a>
+        </div>
+    
+</body>
+</html>
